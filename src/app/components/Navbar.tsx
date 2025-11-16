@@ -37,7 +37,7 @@ const Navbar = () => {
                             )
                         })
                     }
-                    <button className='p-2 rounded-lg hover:bg-gray-100 text-primary dark:hover:bg-gray-800 transition-colors
+                    <button className='p-2 rounded-lg hover:bg-gray-100 text-white hover:text-primary dark:hover:bg-gray-800 transition-colors
                     cursor-pointer'>
                         {
                             theme === "dark" ?(
@@ -65,11 +65,22 @@ const Navbar = () => {
                         <div className='py-4 space-y-4'>
                             {
                                 menuItems.map((item, index) => (
-                                    <div key={index}>
+                                    <div key={index} onClick={toggleMobileMenu}>
                                         <Link href={item.href} className='block py-2 hover:text-primary transition-colors'>{item.label}</Link>
                                     </div>
                                      ))
                                      }
+                                     <div>
+                                        <button className='flex items-center py-2  hover:text-primary transition-colors'>
+                                            {
+                                                theme === "dark" ?(
+                                                    <><SunIcon className='w-5 h-5 mr-2'/> Light Mode</>
+                                                ):(
+                                                    <><MoonIcon className='w-5 h-5 mr-2'/> Dark Mode</>
+                                                )
+                                            }
+                                        </button>
+                                     </div>
                       
                         </div>
                     </div>
