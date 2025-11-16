@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const Navbar = () => {
@@ -15,10 +16,13 @@ const Navbar = () => {
         {href: "/contact", label: 'Contact'},
     ] 
   return (
-    <nav className='fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50'>
+    <nav className='fixed w-full dark:bg-dark/80 backdrop-blur-sm z-50'>
         <div className='container max-w-7xl mx-auto px-4'>
             {/* Desktop Menu */}
-            
+            <div className='flex items-center justify-between h-16'>
+                <Link href="/" className='text-xl font-bold text-primary'>Myfolio</Link>
+            </div>
+
             {/* Mobile Menu  */}
         </div>
     </nav>
