@@ -1,6 +1,7 @@
 "use client"
 
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { div } from 'framer-motion/client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
@@ -47,9 +48,33 @@ const Navbar = () => {
                         }
                     </button>
                 </div>
+                {/* mobile menu button */}
+            <button 
+            onClick={toggleMobileMenu}
+            className='md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer'>
+                {
+                    isMobileMenuOpen ? (<XMarkIcon className='w-6 h-6'/>) : (<Bars3Icon className='w-6 h-6'/>)
+                }
+            </button>
             </div>
 
-            {/* Mobile Menu  */}
+            {/* Mobile Menu */}
+            {
+                isMobileMenuOpen && (
+                    <div className='md:hidden'>
+                        <div className='py-4 space-y-4'>
+                            {
+                                menuItems.map((item, index) => (
+                                    <div key={index}>
+                                        <Link href={item.href} className='block py-2 hover:text-primary transition-colors'>{item.label}</Link>
+                                    </div>
+                                     ))
+                                     }
+                      
+                        </div>
+                    </div>
+                )
+            }
         </div>
     </nav>
   )
