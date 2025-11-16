@@ -1,10 +1,12 @@
 "use client"
 
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 
 const Navbar = () => {
+    const theme="dark" //TODO: get theme from context
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const pathname= usePathname();
     const toggleMobileMenu = () => {
@@ -34,6 +36,16 @@ const Navbar = () => {
                             )
                         })
                     }
+                    <button className='p-2 rounded-lg hover:bg-gray-100 text-primary dark:hover:bg-gray-800 transition-colors
+                    cursor-pointer'>
+                        {
+                            theme === "dark" ?(
+                                <SunIcon className='w-5 h-5'/>
+                            ):(
+                                <MoonIcon className='w-5 h-5'/>
+                            )
+                        }
+                    </button>
                 </div>
             </div>
 
