@@ -1,10 +1,12 @@
 "use client"
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+    const pathname= usePathname();
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     }
@@ -24,9 +26,13 @@ const Navbar = () => {
                 {/* Menu Items */}
                 <div className='hidden md:flex items-center space-x-8'>
                     {
-                        menuItems.map((item) => (
-                            <Link key={item.href} href={item.href} className='hover:text-primary transition-colors'>{item.label}</Link>
-                        ))
+                        menuItems.map((item) => {
+                            const isActive = pathname === item.href;
+                            return(
+                                        <Link key={item.href} href={item.href} className={`hover:text-primary transition-colors ${isActive ? 'font-semiboldgti text-primary' : ''}`}>{item.label}</Link>
+
+                            )
+                        })
                     }
                 </div>
             </div>
