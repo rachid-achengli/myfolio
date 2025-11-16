@@ -5,9 +5,10 @@ import { div } from 'framer-motion/client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
+import { useTheme } from '../projects/context/ThemeContext';
 
 const Navbar = () => {
-    const theme="dark" //TODO: get theme from context
+    const {theme, toggleTheme} = useTheme();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const pathname= usePathname();
     const toggleMobileMenu = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
         {href: "/contact", label: 'Contact'},
     ] 
   return (
-    <nav className='fixed w-full dark:bg-dark/80 backdrop-blur-sm z-50'>
+    <nav className='fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors'>
         <div className='container max-w-7xl mx-auto px-4'>
             {/* Desktop Menu */}
             <div className='flex items-center justify-between h-16'>
@@ -37,7 +38,7 @@ const Navbar = () => {
                             )
                         })
                     }
-                    <button className='p-2 rounded-lg hover:bg-gray-100 text-white hover:text-primary dark:hover:bg-gray-800 transition-colors
+                    <button onClick={toggleTheme}  className='p-2 rounded-lg hover:bg-gray-100 dark:text-white hover:text-primary dark:hover:bg-gray-800 transition-colors
                     cursor-pointer'>
                         {
                             theme === "dark" ?(
@@ -71,7 +72,7 @@ const Navbar = () => {
                                      ))
                                      }
                                      <div>
-                                        <button className='flex items-center py-2  hover:text-primary transition-colors'>
+                                        <button onClick={toggleTheme} className='flex items-center py-2  hover:text-primary transition-colors'>
                                             {
                                                 theme === "dark" ?(
                                                     <><SunIcon className='w-5 h-5 mr-2'/> Light Mode</>
