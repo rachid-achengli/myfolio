@@ -25,7 +25,12 @@ const Hero = () => {
                 </Link>
 
             </div>
-
+            <div className='flex flex-col md:flex-row justify-center gap-4'>
+                <Link href="/projects" className='bg-primary inline-block w-fit md:w-auto text-white px-8 py-3
+                rounded-lg hover:bg-primary/75 transition-colors'>View Projects</Link>
+                <Link href="/contact" className='bg-gray-500 inline-block w-fit md:w-auto text-gray-800 hover:text-primary px-8 py-3
+                rounded-lg hover:bg-gray-300 transition-colors'>Contact Me</Link>
+            </div>
         </div>
     </section>
   )
