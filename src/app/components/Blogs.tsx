@@ -14,6 +14,7 @@ const Blogs = () => {
                         <Link href={`/blogs/${blog.slug}`}>
                         <h3 className='text-xl font-semibold mb-2 hover:text-primary transition-colors'>{blog.title}</h3>
                         </Link>
+                        <p className='text-gray-600 dark:text-gray-300 mb-4'>{blog.excerpt}</p>
                     </article>
                         
                         ))
