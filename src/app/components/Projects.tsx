@@ -1,6 +1,8 @@
 import { projects } from '@/contents/projects'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+import { FaGithub } from 'react-icons/fa'
 
 
 const Projects = () => {
@@ -17,6 +19,21 @@ const Projects = () => {
                         </div>
                         <h3 className='text-xl font-semibold mb-2'>{project.title}</h3>
                         <p className='text-gray-600 dark:text-gray-300 mb-4'>{project.description}</p>
+                        <div className='flex flex-wrap gap-2 mb-4'>
+                            {
+                                project.technologies.map((tech) => (
+                                    <span key={tech} className='px-3 py-1 bg-primary/10 text-primary rounded-full text-sm '>
+                                        {tech}
+                                    </span>
+                                ))
+                            }
+                        </div>
+                        <div className='flex gap-4 '>
+                            <Link href={project.githubLink} target='_blank' className='flex items-center gap-2 text-secondary
+                             hover:text-primary transition-colors'>
+                                <FaGithub className='w-5 h-5'/><span>Code</span>
+                            </Link>
+                        </div>
                     </article>
                 ))
                 
