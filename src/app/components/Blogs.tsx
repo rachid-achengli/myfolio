@@ -2,7 +2,7 @@ import { blogs } from '@/contents/blogs'
 import { article } from 'framer-motion/client'
 import Link from 'next/link'
 import React from 'react'
-import { FaCalendarAlt } from 'react-icons/fa'
+import { FaCalendarAlt, FaClock } from 'react-icons/fa'
 
 const Blogs = () => {
   return (
@@ -20,6 +20,11 @@ const Blogs = () => {
                             <span className='flex items-center'>
                                 <FaCalendarAlt className=' mr-2'/>
                                 {new Date(blog.date).toLocaleDateString()}
+                                
+                            </span>
+                            <span className='flex items-center'>
+                                <FaClock className=' mr-2'/>
+                                {blog.readTime}
                             </span>
                         </div>
                     </article>
