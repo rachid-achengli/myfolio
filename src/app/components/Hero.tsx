@@ -11,8 +11,8 @@ const Hero = () => {
                 ring-2 ring-primary'/>
             </div>
             <h1 className='text-4xl md:text-6xl font-bold mb-6'>Hi, I'm <span className='text-primary'>Rachid Achengli</span></h1>
-            <p className='text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8'>Full Stack Developer | UI/UX Enthusiast 
-                | Open Source Contributor</p>
+            <p className='text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8'>Software Developer | AI/ML Enthusiast 
+                | Open Source Contributor | PHD Searcher</p>
             <div className='flex justify-center space-x-4 mb-8' >
                 <Link href="https://github.com/rachid-achengli" className='text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition-colors duration-300'>
                     <FaGithub/>
