@@ -13,7 +13,9 @@ const Newsletter = () => {
               <form className='flex flex-col md:flex-row gab-4'>
                 <input type="email" placeholder="Enter your email" className='flex-1 px-4 py-3 border rounded-lg dark:text-white 
                 border-gray-300 dark:border-gray-600 bg-white text-gray-500 dark:bg-dark focus:outline-none focus:ring-2
-                focus:ring-primary' />
+                focus:ring-primary mr-4' />
+                <button type="submit" className=' bg-primary text-white px-8 py-3 rounded-lg
+                hover:bg-primary/90 transition-colors'>Subscribe</button>
               </form> 
             </div>
         </div>
