@@ -5,7 +5,8 @@ const Newsletter = () => {
     <section className='py-20 bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden animate-slide-up'>
         <div className='p-8 md:p-12'>
             <div className='max-w-7xl mx-auto'>
-              <div>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+                <div>
                 <h2 className='text-2xl font-bold mb-4'>Subscribe to My Newsletter</h2>
                 <p className='text-gray-600 dark:text-gray-300 md:w-2/3'>Stay updated with the latest blog posts and projects. 
                 Subscribe to my newsletter and never miss out!</p>
@@ -16,7 +17,8 @@ const Newsletter = () => {
                 focus:ring-primary mr-4' />
                 <button type="submit" className=' bg-primary text-white px-8 py-3 rounded-lg
                 hover:bg-primary/90 transition-colors'>Subscribe</button>
-              </form> 
+              </form>
+              </div> 
             </div>
         </div>
     </section>
